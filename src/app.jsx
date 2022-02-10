@@ -1,12 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import { About } from './views/about';
-import { Home } from './views/home';
+import { routes } from './routes';
+
 function App() {
 	return (
 		<div className="App">
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="about" element={<About />} />
+				{routes.map((item, key)=> <Route key={key} path={item.path} element={item.element} />)}
 			</Routes>
 		</div>
 	);

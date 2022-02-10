@@ -1,9 +1,13 @@
 const CracoLessPlugin = require('craco-less');
+const path = require('path');
 
 // eslint-disable-next-line no-undef
 module.exports = {
 	webpack: {
-		alias: {},
+		alias: {
+			'@services': path.resolve(__dirname, 'src/services'),
+			'@comps': path.resolve(__dirname, 'src/components'),
+		},
 		configure: {
 			output: {
 				publicPath: process.env.NODE_ENV === 'development'? '/': '.'
